@@ -1,0 +1,10 @@
+<div>
+  <label>{{label}}</label>
+  <input type="text" (input)="onChange($event.target.value)" (blur)="onTouched($event.target.value)" [placeholder]="placeholder" #input [disabled]="disabled">
+  <div>
+    <ul>
+      <li>{{control.value}}</li>
+      <li>{{control.valid}}</li>
+    </ul>
+  </div>
+</div>
