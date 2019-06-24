@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MyCurrencyComponentModuleModule } from './my-currency-component-module/my-currency-component-module.module';
+import { MyCurrencyComponentModuleModule } from './my-currency-component-module/my-currency-component.module';
 
 @NgModule({
   declarations: [
