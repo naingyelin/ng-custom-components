@@ -1,10 +1,8 @@
-<div>
-  <label>{{label}}</label>
-  <input type="text" (input)="onChange($event.target.value)" (blur)="onTouched($event.target.value)" [placeholder]="placeholder" #input [disabled]="disabled">
-  <div>
-    <ul>
-      <li>{{control.value}}</li>
-      <li>{{control.valid}}</li>
-    </ul>
-  </div>
-</div>
+<mat-form-field>
+  <input matInput type="text" (input)="onChange($event.target.value)" (keypress)="onChange($event.target.value)"
+    (blur)="onTouched($event.target.value)" [placeholder]="placeholder" #input [disabled]="disabled">
+</mat-form-field>
+<ul>
+  <li>{{control.value}}</li>
+  <li>{{control.valid}}</li>
+</ul>

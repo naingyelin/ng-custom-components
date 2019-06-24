@@ -24,11 +24,10 @@ export class MyCurrencyComponent implements OnInit, OnDestroy, ControlValueAcces
     if (this.control.validator != null) {
       this.validators.push(this.control.validator);
     }
-    this.validators.push(Validators.nullValidator);
-    this.validators.push(Validators.required);
     const regex = /^(\$)?([1-9]{1}[0-9]{0,2})(\,\d{3})*(\.\d{2})?$|^(\$)?([1-9]{1}[0-9]{0,2})(\d{3})*(\.\d{2})?$|^(0)?(\.\d{2})?$|^(\$0)?(\.\d{2})?$|^(\$\.)(\d{2})?$/g;
     this.validators.push(Validators.pattern(regex));
     this.control.setValidators(this.validators);
+    this.controlDirective.control.updateValueAndValidity({ emitEvent: false });
   }
   ngOnDestroy(): void {
     this.control.clearValidators();

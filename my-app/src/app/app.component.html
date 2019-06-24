@@ -1,4 +1,5 @@
-<app-my-currency-component placeholder="Fees" [(ngModel)]="fees">
+<app-my-currency-component placeholder="Entry Fees" [(ngModel)]="fees" [ngModelOptions]="{standalone: true}">
 </app-my-currency-component>
-<div>Fees: {{fees}}</div>
+<div>{{fees | currency}}</div>
+
 <router-outlet></router-outlet>

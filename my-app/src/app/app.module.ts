@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyCurrencyComponentModuleModule } from './my-currency-component-module/my-currency-component.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MyCurrencyComponentModuleModule } from './my-currency-component-module/
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MyCurrencyComponentModuleModule
+    MyCurrencyComponentModuleModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })
