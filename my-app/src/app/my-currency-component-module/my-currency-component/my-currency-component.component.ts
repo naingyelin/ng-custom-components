@@ -26,7 +26,8 @@ export class MyCurrencyComponent implements OnInit, OnDestroy, AfterViewInit, Co
     if (this.control.validator != null) {
       this.validators.push(this.control.validator);
     }
-    const regex = /^(\$)?([1-9]{1}[0-9]{0,2})(\,\d{3})*(\.\d{2})?$|^(\$)?([1-9]{1}[0-9]{0,2})(\d{3})*(\.\d{2})?$|^(0)?(\.\d{2})?$|^(\$0)?(\.\d{2})?$|^(\$\.)(\d{2})?$/g;
+    // Decimal and commas optional
+    const regex = /(?=.*?\d)^\$?(([1-9]\d{0,2}(,\d{3})*)|\d+)?(\.\d{1,2})?$/g
     this.validators.push(Validators.pattern(regex));
     this.control.setValidators(this.validators);
     this.controlDirective.control.updateValueAndValidity({ emitEvent: false });
