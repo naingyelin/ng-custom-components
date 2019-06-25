@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'my-app';
-  public fees: string = 'null';
+  fees: number = 0
+  form: FormGroup;
+  constructor(private fb: FormBuilder) {
+  }
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      rebate: [0],
+      expenses: [0]
+    });
+  }
 }

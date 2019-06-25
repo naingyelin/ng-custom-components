@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Self, Optional, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Self, Optional, ViewChild, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { AbstractControl, NG_VALUE_ACCESSOR, Validators, NgControl, ControlValueAccessor, ValidatorFn } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { AbstractControl, NG_VALUE_ACCESSOR, Validators, NgControl, ControlValue
   templateUrl: './my-currency-component.component.html',
   styleUrls: ['./my-currency-component.component.sass']
 })
-export class MyCurrencyComponent implements OnInit, OnDestroy, ControlValueAccessor {
+export class MyCurrencyComponent implements OnInit, OnDestroy, AfterViewInit, ControlValueAccessor {
   control: AbstractControl;
   @Input() validators: ValidatorFn[];
   @ViewChild('input', null) input: ElementRef<any>;
@@ -17,10 +17,12 @@ export class MyCurrencyComponent implements OnInit, OnDestroy, ControlValueAcces
   @Input() placeholder = '';
   constructor(@Self() @Optional() private controlDirective: NgControl) {
     this.controlDirective.valueAccessor = this;
-    this.control = this.controlDirective.control;
   }
   ngOnInit() {
+    this.control = this.controlDirective.control;
     this.validators = [];
+  }
+  ngAfterViewInit(): void {
     if (this.control.validator != null) {
       this.validators.push(this.control.validator);
     }

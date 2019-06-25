@@ -1,5 +1,16 @@
-<app-my-currency-component placeholder="Entry Fees" [(ngModel)]="fees" [ngModelOptions]="{standalone: true}">
-</app-my-currency-component>
-<div>{{fees | currency}}</div>
+<form [formGroup]="form">
+    <app-my-currency-component placeholder="Entry attendence Fees" [(ngModel)]="fees" required
+        [ngModelOptions]="{standalone: true}">
+    </app-my-currency-component>
+    <div>{{fees | currency}}</div>
+    <hr>
+    <app-my-currency-component placeholder="Entry Rebate" formControlName="rebate">
+    </app-my-currency-component>
+    <div>{{form.value | json}}</div>
+    <hr>
+    <app-my-currency-component placeholder="Entry expenses" formControlName="expenses">
+    </app-my-currency-component>
+    <div>{{form.get('expenses').value | currency}}</div>
+</form>
 
 <router-outlet></router-outlet>
