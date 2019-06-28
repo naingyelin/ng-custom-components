@@ -1,10 +1,10 @@
 <mat-form-field>
-  <input matInput type="text" 
+  <input matInput type="text" autocomplete="off"
   (input)="onChange($event.target.value)"
-  (keypress)="onChange($event.target.value)"
-  (keydown)="onChange($event.target.value)"
-  (keyup)="onChange($event.target.value)"
-  (blur)="onTouched($event)" [placeholder]="placeholder" #input [disabled]="disabled">
+  (keydown)="onTouched($event.target.value)"
+  (blur)="onTouched($event)" 
+  (click)="onTouched($event)" 
+  [placeholder]="placeholder" #input [disabled]="disabled">
 </mat-form-field>
 <ul>
   <li>{{control.value}}</li>
