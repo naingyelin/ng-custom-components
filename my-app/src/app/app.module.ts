@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MyCurrencyComponentModuleModule } from './my-currency-component-module/my-currency-component.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyCurrencyComponentModule } from './my-currency-component-module/my-currency-component.module';
+import { MyPhoneComponentModule } from './my-phone/my-phone.module';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MyCurrencyComponentModuleModule,
+    MyCurrencyComponentModule,
+    MyPhoneComponentModule,
     BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]

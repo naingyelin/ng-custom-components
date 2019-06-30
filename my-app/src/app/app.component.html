@@ -1,25 +1,46 @@
-
 <form #f="ngForm">
-    <app-my-currency-component name="fees" #ctrl="ngModel" placeholder="Entry attendence Fees" [(ngModel)]="fees" 
-    required>
-</app-my-currency-component>
-<div>{{fees | currency}}</div>
-<div>{{ctrl.valid}}</div>
-<hr>
-</form>
-<form [formGroup]="form">
-    <app-my-currency-component placeholder="Entry Rebate" formControlName="rebate">
-    </app-my-currency-component>
-    <div>{{form.get('rebate').value | currency}}</div>
-    <div>{{form.get('rebate').valid}}</div>    <hr>
-    <app-my-currency-component placeholder="Entry expenses" formControlName="expenses">
-    </app-my-currency-component>
-    <div>{{form.get('expenses').value | currency}}</div>
-    <div>{{form.get('expenses').valid}}</div>
-    <hr>
-    <div>{{form.value | json}}</div>
-    <div>{{form.valid}}</div>
+  <mat-form-field>
+    <app-my-phone name="mobileNo" #mobileCtrl="ngModel" placeholder="mobile no." [(ngModel)]="mobileNo" required>
+    </app-my-phone>
+    <mat-icon matSuffix>phone</mat-icon>
+    <mat-hint>
+      <ul>
+        <li>Include area code</li>
+        <li>{{mobileNo | json}}</li>
+        <li>{{mobileCtrl.valid}}</li>
+      </ul>
+    </mat-hint>
+  </mat-form-field>
+
+  <!-- <mat-form-field>
+    <app-my-currency name="fees" #feesCrtl="ngModel" placeholder="Entry attendence Fees"
+      [(ngModel)]="fees" required>
+    </app-my-currency>
+    <mat-icon matPrefix>currency</mat-icon>
+    <mat-hint>
+      <ul>
+        <li>{{fees | currency}}</li>
+        <li>{{feesCrtl.valid}}</li>
+      </ul>
+    </mat-hint>
+  </mat-form-field> -->
 
 </form>
+
+<!-- <form [formGroup]="form">
+  <app-my-currency placeholder="Entry Rebate" formControlName="rebate">
+  </app-my-currency>
+  <div>{{form.get('rebate').value | currency}}</div>
+  <div>{{form.get('rebate').valid}}</div>
+  <hr>
+  <app-my-currency placeholder="Entry expenses" formControlName="expenses">
+  </app-my-currency>
+  <div>{{form.get('expenses').value | currency}}</div>
+  <div>{{form.get('expenses').valid}}</div>
+  <hr>
+  <div>{{form.value | json}}</div>
+  <div>{{form.valid}}</div>
+
+</form> -->
 
 <router-outlet></router-outlet>

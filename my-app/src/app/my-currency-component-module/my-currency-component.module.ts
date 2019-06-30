@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
-import { MyCurrencyComponent } from './my-currency-component/my-currency-component.component';
+import { MyCurrencyComponent } from './my-currency-component/my-currency.component';
 
 @NgModule({
   declarations: [MyCurrencyComponent],
@@ -15,4 +15,4 @@ import { MyCurrencyComponent } from './my-currency-component/my-currency-compone
     MatInputModule
   ]
 })
-export class MyCurrencyComponentModuleModule { }
+export class MyCurrencyComponentModule { }

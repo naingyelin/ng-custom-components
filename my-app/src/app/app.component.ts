@@ -8,7 +8,8 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
-  fees: number = 0
+  fees = 0;
+  mobileNo = '';
   form: FormGroup;
   constructor(private fb: FormBuilder) {
   }
