@@ -1,10 +1,14 @@
-<input type="text" autocomplete="off"
-  (input)="onChange($event.target.value)"
-  (keydown)="onTouched($event.target.value)"
-  (blur)="onTouched($event)"
-  (click)="onTouched($event)"
-  [placeholder]="placeholder" #input [disabled]="disabled">
-<ul>
-  <li>{{control.value}}</li>
-  <li>{{control.valid}}</li>
-</ul>
+<div>
+    <mat-form-field>
+        <input matInput type="text" autocomplete="off"
+        (input)="onChange($event.target.value)"
+        (keydown)="onTouched($event.target.value)"
+        (blur)="onTouched($event)"
+        (click)="onTouched($event)"
+        [placeholder]="placeholder" #input [disabled]="disabled">
+    </mat-form-field>
+    <ul>
+        <li>{{control.value}}</li>
+        <li>{{control.valid}}</li>
+    </ul>
+</div>
